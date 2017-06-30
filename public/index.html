@@ -1,0 +1,70 @@
+<!--
+@author: Venky Rao raove@us.ibm.com
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IBM Fellows</title>
+    <!-- link datatables css -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+</head>
+<body>
+    <h1>IBM Fellows</h1>
+    <p>An IBM Fellow is an appointed position at IBM made by IBM’s CEO.  It is the highest honor a scientist, engineer, or programmer at IBM can achieve.  As of 2016, only 277 IBMers have earned the IBM Fellow distinction, and 98 of them remain active IBM employees.  IBM Fellows have generated 9,307 patents, <strong>received five Nobel prizes</strong>, thousands of government and professional citations and have a massive store of published research in scientific journals.</p>
+    <p>This webpage aims to provide information about IBM Fellows including their year of appointment and their area of expertise.</p><br>
+    <!--
+    <button id="showTable" class="button">Show Table</button>
+    <button id="hideList" class="button">Hide Table</button><br> -->
+    <table id="fellowsTable" class="display" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Appointment Year</th>
+                <th>Nationality</th>
+                <th>Expertise</th>
+                <th>Nobel Prize</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Appointment Year</th>
+                <th>Nationality</th>
+                <th>Expertise</th>
+                <th>Nobel Prize</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- load jquery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- load datatables js library -->
+    <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+
+    <!-- load button.js
+    <script type="text/javascript" src="js/button.js"></script> -->
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#fellowsTable').dataTable({
+            "ajax": "fellows.json",
+            "sAjaxDataProp": "fellows",
+            "aoColumns": [
+                {"mDataProp": "firstName"},
+                {"mDataProp": "lastName"},
+                {"mDataProp": "citationYear"},
+                {"mDataProp": "nationality"},
+                {"mDataProp": "expertiseArea"},
+                {"mDataProp": "nobelPrize"}
+            ]
+        });
+    });
+    </script>
+</body>
+</html>
