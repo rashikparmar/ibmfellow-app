@@ -1,1 +1,1 @@
-## Lauren's Lovely Landscapes - Node.js Edition
+## IBM Fellow Navigator App - created by Venkatesh Rao
